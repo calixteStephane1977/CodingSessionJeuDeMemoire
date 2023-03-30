@@ -1,21 +1,33 @@
-
+body{
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 48vh;           
+}
 .main_container {
+
     display: flex;
-    height: 605px;
-    width: 849px;
-    flex-wrap: wrap;
+        position: relative;
+        top: 50%;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+        width: 80%;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        border: 1px solid;
 }
 
 .card {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid;
-    width: 200px;
-    height: 200px;
-    z-index: 10;
-    transform: rotateY(0deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid;
+        width: 20%;
+        height: 20%;
+        z-index: 10;
+        transform: rotateY(0deg);
     
 }
 .card::before {
@@ -35,8 +47,8 @@ transform: rotateY(100deg);
 }
 img{
     position: absolute;
-    width: 100px;
-    height: 100px;
+    /* width: 100%; */
+    height: 100%;
     z-index: -1;
     
 }

@@ -34,22 +34,33 @@ const array_pics = [
             " ./img/luffy.png " ,
              " ./img/naruto.png " ,
              " ./img/shinichi.png " 
-            ];
+];
+console.log(array_pics);
+            let x=[]
             function random_click() {
                 let randomArray_pics=[]
                 console.log(randomArray_pics);
-  
-        for (const r of (array_pics)) {
-        //   randomArray_pics = r.Math
-            [r].forEach(element => {
-                // console.log(element.floor(Math.random() * array_pics.length));
+                for (let i = 0; i < array_pics.length; i++) {
+                    const element = array_pics[i];
+                     x = Math.floor((Math.random() *12) + 1);
+                    console.log(x);
                 
-                // console.log("test");
-            });
-        }
+
+                }
+  
+        // for (const r of (array_pics)) {
+        // //   randomArray_pics = r.Math
+        //     [r].forEach(element => {
+        //         console.log(element);
+        //         // console.log(element.floor(Math.random() * array_pics.length));
+                
+        //         // console.log("test");
+        //     });
+        // }
             // console.log(random);
+                display_pics()
     
-}
+              }
     counter = 0
     
     function compter() {
@@ -129,14 +140,15 @@ const array_pics = [
  
     const cards= document.querySelectorAll('.card');
     // console.log(cards);
+    // ====================================================
     function display_pics(e){
         // console.log(e)
        
        
         cards.forEach((card => {
-            // Math.floor(Math.random() * cards.length);
-        
+            
             card.innerHTML = array_pics.map((pic)=>
+            console.log(pic)
 
             `
                         <img src=${
@@ -145,13 +157,12 @@ const array_pics = [
                         
                         </img>
     
-    
             `   
             
-            ).join("")
+            )
             })
         )}
-display_pics();
+// display_pics();
 
     let element=[]
     console.log(element);

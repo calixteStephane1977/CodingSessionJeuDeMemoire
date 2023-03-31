@@ -4,29 +4,59 @@ const con = document.getElementsByTagName('article');
 console.log(con);
 // console.log(body);
 // ====================================
+const btn = document.createElement("input");
+btn.setAttribute("type", "button")
+btn.setAttribute("id", "begin")
+btn.setAttribute("value","commencer")
+body.appendChild(btn)
+
+
+btn.addEventListener("click", random_click)
+
+// let array_pics = [
+// { pic:" ./img/goku.png "},   
+// { pic:" ./img/gon.png " },
+// { pic:" ./img/happy.png "},
+// { pic:" ./img/luffy.png "},
+// { pic:" ./img/naruto.png "},
+// { pic:" ./img/shinichi.png "}, 
+// { pic:" ./img/gon.png "   },
+// { pic:" ./img/happy.png "} ,
+// { pic:" ./img/luffy.png "} ,
+// { pic:" ./img/naruto.png " },
+// { pic:" ./img/shinichi.png " }
+
+// ];
+const array_pics = [
+            " ./img/goku.png ",   
+            " ./img/gon.png " ,
+             " ./img/happy.png " ,
+            " ./img/luffy.png " ,
+             " ./img/naruto.png " ,
+             " ./img/shinichi.png " 
+            ];
+            function random_click() {
+                let randomArray_pics=[]
+                console.log(randomArray_pics);
+  
+        for (const r of (array_pics)) {
+        //   randomArray_pics = r.Math
+            [r].forEach(element => {
+                // console.log(element.floor(Math.random() * array_pics.length));
+                
+                // console.log("test");
+            });
+        }
+            // console.log(random);
     
-// const array_pics = [
-//         " ./img/goku.png ",   
-//         " ./img/gon.png " ,
-//          " ./img/happy.png " ,
-//         " ./img/luffy.png " ,
-//          " ./img/naruto.png " ,
-//          " ./img/shinichi.png " 
-//         ];
-let array_pics = [
-        " ./img/goku.png ",   
-        " ./img/gon.png " ,
-         " ./img/happy.png " ,
-        " ./img/luffy.png " ,
-         " ./img/naruto.png " ,
-         " ./img/shinichi.png ", 
-        " ./img/goku.png ",   
-        " ./img/gon.png " ,
-         " ./img/happy.png " ,
-        " ./img/luffy.png " ,
-         " ./img/naruto.png " ,
-         " ./img/shinichi.png " 
-        ];
+}
+    counter = 0
+    
+    function compter() {
+        counter++
+    }
+    compter()
+        
 // let array_pics = [
 //         { pic:"goku"},   
 //         { pic:"gon"} ,
@@ -63,7 +93,6 @@ let array_pics = [
         ]
 
     ;
-
 // =======================================container
     const container ={
     container:document.createElement("article")
@@ -87,7 +116,7 @@ let array_pics = [
 
         for (const [key,value] of Object.entries(newDiv)) {
         // console.log(value);
-        value.setAttribute("id","")
+        value.setAttribute("id",counter++)
         value.setAttribute("class","card")
         container.container.appendChild(value)
 
@@ -100,125 +129,126 @@ let array_pics = [
  
     const cards= document.querySelectorAll('.card');
     // console.log(cards);
-//     function display_pics(e){
-//         // console.log(e)
-    
+    function display_pics(e){
+        // console.log(e)
        
-//        cards.forEach((card) => {
+       
+        cards.forEach((card => {
+            // Math.floor(Math.random() * cards.length);
         
-//             card.innerHTML = array_pics.map(pic =>
-           
-                
-//             `
-//                         <img src=${pic}></img>
+            card.innerHTML = array_pics.map((pic)=>
+
+            `
+                        <img src=${
+                Object.entries(pic)
+                        }>
+                        
+                        </img>
     
     
-//             `   
+            `   
             
-//             )
-//             })
-// }
-// display_pics();
+            ).join("")
+            })
+        )}
+display_pics();
 
     let element=[]
     console.log(element);
-for (let i = 0; i <cards.length; i++) {
+    for (let i = 0; i <cards.length; i++) {
     // console.log(cards[i]);
-    element.push(cards[i]);
+             let random_cards=cards[i]
+    element.push(random_cards);
     // console.log(element);
     
     
 }
 
-const random = Math.floor(Math.random()*array_pics.length);
-console.log(array_pics[random]);
-async function addCards(){
 
-    element[0].innerHTML+= Math.floor(Math.random()*array_pics.length);
-    console.log(array_pics[random]);` 
+// console.log(array_pics);
+// function addCards(){
+
+
     
-                        <img src=${array_pics[random]}></img>
+//     element[0].innerHTML= 
+//         ` 
+ 
+//                         <img src=${array_pics[0].pic}></img>
         
         
-        `
-    element[1].innerHTML+=` 
+//         `
+//     element[1].innerHTML=` 
     
-                        <img src=${array_pics[1]}></img>
+//                         <img src=${array_pics[1].pic}></img>
         
         
-        `
-    element[2].innerHTML+=` 
+//         `
+//     element[2].innerHTML=` 
     
-                        <img src=${array_pics[2]}></img>
+//                         <img src=${array_pics[2].pic}></img>
         
         
-        `
-    element[3].innerHTML+=` 
+//         `
+//     element[3].innerHTML=` 
     
-                        <img src=${array_pics[3]}></img>
+//                         <img src=${array_pics[3].pic}></img>
         
         
-        `
-    element[4].innerHTML+=` 
+//         `
+//     element[4].innerHTML=` 
     
-                        <img src=${array_pics[4]}></img>
+//                         <img src=${array_pics[4].pic}></img>
         
         
-        `
-    element[5].innerHTML+=` 
+//         `
+//     element[5].innerHTML=` 
+
+//                         <img src=${array_pics[5].pic}></img>
+        
+        
+//         `
+//     element[6].innerHTML=` 
     
-                        <img src=${array_pics[5]}></img>
+//                         <img src=${array_pics[6].pic}></img>
         
         
-        `
-    element[6].innerHTML+=` 
+//         `
+//     element[7].innerHTML=` 
     
-                        <img src=${array_pics[6]}></img>
+//                         <img src=${array_pics[7].pic}></img>
         
         
-        `
-    element[7].innerHTML+=` 
+//         `
+//     element[8].innerHTML=` 
     
-                        <img src=${array_pics[7]}></img>
+//                         <img src=${array_pics[8].pic}></img>
         
         
-        `
-    element[8].innerHTML+=` 
+//         `
+//     element[9].innerHTML= 
     
-                        <img src=${array_pics[8]}></img>
-        
-        
-        `
-    element[9].innerHTML+= 
+//     ` 
     
-    ` 
+//                         <img src=${array_pics[9].pic}></img>
+        
+        
+//         `
+//     element[10].innerHTML=` 
     
-                        <img src=${array_pics[9]}></img>
+//                         <img src=${array_pics[10].pic}></img>
         
         
-        `
-    element[10].innerHTML+=await ` 
+//         `
+//     element[11].innerHTML= 
+//     ` 
     
-                        <img src=${array_pics[10]}></img>
+//                         <img src=${array_pics[11].pic}></img>
         
         
-        `
-    element[11].innerHTML+= 
-    ` 
-    
-                        <img src=${array_pics[11]}></img>
-        
-        
-    `
-    
-    // element[12].innerHTML+=` 
-    
-    //                     <img src=${array_pics[11]}></img>
-        
-        
-    //     `
-};
-addCards()
+//     `
+
+// };
+// addCards()
 
 // function randomCards(){
 //     for(let i = 0; i < cards.length; i++){
